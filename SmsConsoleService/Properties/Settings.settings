@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SmsConsoleService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="username" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CEO</Value>
+    </Setting>
+    <Setting Name="password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Mafanikio2024</Value>
+    </Setting>
+    <Setting Name="domain" Type="System.String" Scope="User">
+      <Value Profile="(Default)">mafanikio_server.mafanikiosacco.com</Value>
+    </Setting>
+    <Setting Name="SmsConsoleService_NAVWEBREF_SURESMSSERVICE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://desktop-854kji4:1047/BC130/WS/Vision%20Sacco%20Ltd./Codeunit/SURESMSSERVICE</Value>
+    </Setting>
+    <Setting Name="SmsConsoleService_smsReference_SURESMSSERVICE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://mafanikio_server.mafanikiosacco.com:7047/BC230/WS/MAFANIKIO%20SACCO/Codeunit/SURESMSSERVICE</Value>
+    </Setting>
+    <Setting Name="SmsConsoleService_CloudPESAMB_CPMOBILE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.3.2:7047/BC230/WS/MAFANIKIO%20SACCO/Codeunit/CPMOBILE</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

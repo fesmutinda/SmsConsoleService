@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/SURESMSSERVICE" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/SURESMSSERVICE" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/SURESMSSERVICE" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="GetBulKSMS">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="GetBulKSMS_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="UpdateConfirmSent">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="entryNo" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="UpdateConfirmSent_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="GetBulKSMS">
+    <part name="parameters" element="tns:GetBulKSMS" />
+  </message>
+  <message name="GetBulKSMS_Result">
+    <part name="parameters" element="tns:GetBulKSMS_Result" />
+  </message>
+  <message name="UpdateConfirmSent">
+    <part name="parameters" element="tns:UpdateConfirmSent" />
+  </message>
+  <message name="UpdateConfirmSent_Result">
+    <part name="parameters" element="tns:UpdateConfirmSent_Result" />
+  </message>
+  <portType name="SURESMSSERVICE_Port">
+    <operation name="GetBulKSMS">
+      <input name="GetBulKSMS" message="tns:GetBulKSMS" />
+      <output name="GetBulKSMS_Result" message="tns:GetBulKSMS_Result" />
+    </operation>
+    <operation name="UpdateConfirmSent">
+      <input name="UpdateConfirmSent" message="tns:UpdateConfirmSent" />
+      <output name="UpdateConfirmSent_Result" message="tns:UpdateConfirmSent_Result" />
+    </operation>
+  </portType>
+  <binding name="SURESMSSERVICE_Binding" type="tns:SURESMSSERVICE_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="GetBulKSMS">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/SURESMSSERVICE:GetBulKSMS" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetBulKSMS">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetBulKSMS_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="UpdateConfirmSent">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/SURESMSSERVICE:UpdateConfirmSent" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="UpdateConfirmSent">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="UpdateConfirmSent_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="SURESMSSERVICE">
+    <port name="SURESMSSERVICE_Port" binding="tns:SURESMSSERVICE_Binding">
+      <address location="http://desktop-854kji4:1047/BC130/WS/Vision%20Sacco%20Ltd./Codeunit/SURESMSSERVICE" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

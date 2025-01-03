@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/SURESMSSERVICE" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/SURESMSSERVICE" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/SURESMSSERVICE" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="ChargeSMS">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="ChargeSMS_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="ConfirmSent">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="telephoneNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="status" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ConfirmSent_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="PollPendingSMS">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="PollPendingSMS_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="ChargeSMS">
+    <part name="parameters" element="tns:ChargeSMS" />
+  </message>
+  <message name="ChargeSMS_Result">
+    <part name="parameters" element="tns:ChargeSMS_Result" />
+  </message>
+  <message name="ConfirmSent">
+    <part name="parameters" element="tns:ConfirmSent" />
+  </message>
+  <message name="ConfirmSent_Result">
+    <part name="parameters" element="tns:ConfirmSent_Result" />
+  </message>
+  <message name="PollPendingSMS">
+    <part name="parameters" element="tns:PollPendingSMS" />
+  </message>
+  <message name="PollPendingSMS_Result">
+    <part name="parameters" element="tns:PollPendingSMS_Result" />
+  </message>
+  <portType name="SURESMSSERVICE_Port">
+    <operation name="ChargeSMS">
+      <input name="ChargeSMS" message="tns:ChargeSMS" />
+      <output name="ChargeSMS_Result" message="tns:ChargeSMS_Result" />
+    </operation>
+    <operation name="ConfirmSent">
+      <input name="ConfirmSent" message="tns:ConfirmSent" />
+      <output name="ConfirmSent_Result" message="tns:ConfirmSent_Result" />
+    </operation>
+    <operation name="PollPendingSMS">
+      <input name="PollPendingSMS" message="tns:PollPendingSMS" />
+      <output name="PollPendingSMS_Result" message="tns:PollPendingSMS_Result" />
+    </operation>
+  </portType>
+  <binding name="SURESMSSERVICE_Binding" type="tns:SURESMSSERVICE_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="ChargeSMS">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/SURESMSSERVICE:ChargeSMS" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ChargeSMS">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ChargeSMS_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ConfirmSent">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/SURESMSSERVICE:ConfirmSent" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ConfirmSent">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ConfirmSent_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="PollPendingSMS">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/SURESMSSERVICE:PollPendingSMS" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="PollPendingSMS">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="PollPendingSMS_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="SURESMSSERVICE">
+    <port name="SURESMSSERVICE_Port" binding="tns:SURESMSSERVICE_Binding">
+      <address location="http://mafanikio_server.mafanikiosacco.com:7047/BC230/WS/MAFANIKIO%20SACCO/Codeunit/SURESMSSERVICE" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>
